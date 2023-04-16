@@ -11,11 +11,6 @@ html {
 } /*16px*/
 
 
-.master1{
-  background-color: rgb(8, 77, 196);
-  padding: 1rem;
-}
-
 
 :root {
   /* colors */
@@ -908,23 +903,25 @@ Recipe Template
 
 
 .search-container {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translate(0, -50%);
+  width:400px;
+  padding:.3rem
 }
 
 .search-container form {
-  display: flex;
-  align-items: center;
+  display:flex;
+  justify-content:center;
+  align-items:center;
 }
 
 .search-container input[type="text"] {
   padding: 10px;
   border-radius: 5px;
   border: none;
-  border: 2px solid black;
   width: 200px;
+}
+.search-container input[type="text"]:focus{
+  outline:2px solid royalblue;
+
 }
 .add-recipes-button {
   font-size: 16px;
@@ -952,14 +949,6 @@ input[type="text"] {
   width: 200px;
 }
 
-button[type="submit"] {
-  padding: 10px 20px;
-  border-radius: 5px;
-  background-color: #333;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-}
 
 label {
   display: block;
@@ -1000,35 +989,5 @@ button[type="submit"] {
   border-radius: 5px;
   cursor: pointer;
 }
-.search-container {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translate(0, -50%);
-}
-
-.search-container form {
-  display: flex;
-  align-items: center;
-}
-
-.search-container input[type="text"] {
-  padding: 10px;
-  border-radius: 5px;
-  border: none;
-  width: 200px;
-  border: 2px solid black;
-}
-
-.search-container button {
-  padding: 10px;
-  border-radius: 10px;
-  border: none;
-  background-color: #4CAF50;
-  color: white;
-  margin-left: 5px;
-  cursor: pointer;
-}
-
 
 

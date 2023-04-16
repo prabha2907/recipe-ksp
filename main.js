@@ -1,20 +1,32 @@
 import data from "./recipeData.js";
 
-const searchBox = document.querySelector("#serchForm");
+const searchBox = document.querySelector("#searchText");
 
-searchBox.addEventListener("submit", function (event) {
-  event.preventDefault();
-  const searchText = event.target.searchText;
+const parent = document.querySelector(".master1")
 
-  data.forEach((item) => {
-    const markUp = `
-    <div class="box">
-    <img src="https://www.who.int/images/default-source/searo---images/health-topic-images/diabetes/diabetesbanner.tmb-1024v.jpg?Culture=en&sfvrsn=10b34adb_1" alt="">
-    <div>
-      <h2>Cheese Cake</h2>
-      <p></p>
-    </div>
-  </div>
-    `;
-  });
+function showText (search = "") {
+    parent.innerHTML = " "
+	data.forEach((item) => {
+		if(search==="" || item.name.includes(search)) {
+			const markUp = `
+			<div class="box">
+			<img src="${item.image}" alt="">
+			<div class="content">
+				<h2>${item.name}</h2>
+				<span class="text">
+				<p><b>PrepTime :</b>${item.PrepTime}</p>|
+				<p><b>CookTime:</b> ${item.CookTime}</p>
+				</span>
+			</div>
+		</div>
+			`;
+			parent.innerHTML+= markUp
+		}
+	});
+}
+
+showText()
+
+searchText.addEventListener("input", (event)=>{
+    showText(event.target.value.toLowerCase())
 });
